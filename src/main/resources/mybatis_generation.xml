@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+        <properties resource="jdbc.properties"/>
+        <context id="default" targetRuntime="MyBatis3">
+                <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}"></jdbcConnection>
+                <javaModelGenerator targetPackage="com.drafthj.model" targetProject="src/main/java">
+                        <property name="constructorBased" value="true"/>
+                </javaModelGenerator>
+                <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+                <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.drafthj.mapper" targetProject="src/main/java">
+                        <property name="rootInterface" value=""/>
+                </javaClientGenerator>
+                <table tableName="course">
+                        <property name="modelOnly" value="false"/>
+                        <generatedKey column="id" sqlStatement="MySql"/>
+                </table>
+                <table tableName="student">
+                        <property name="modelOnly" value="false"/>
+                        <generatedKey column="id" sqlStatement="MySql"/>
+                </table>
+                <table tableName="student_course">
+                        <property name="modelOnly" value="false"/>
+                        <generatedKey column="id" sqlStatement="MySql"/>
+                </table>
+                <table tableName="teacher">
+                        <property name="modelOnly" value="false"/>
+                        <generatedKey column="id" sqlStatement="MySql"/>
+                </table>
+        </context>
+</generatorConfiguration>
